@@ -1,0 +1,104 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .dropdown-container,
+  .textbox-container {
+    margin: 10px;
+  }
+  
+  .textbox-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  
+  input,
+  select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .form-container {
+      width: 100%;
+    }
+  }
+  
+  @media screen and (min-width: 601px) and (max-width: 900px) {
+    .form-container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  
+    .input-container {
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 0;
+    }
+  
+    .textbox-container {
+      margin-top: 0;
+    }
+  
+    label {
+      margin-right: 10px;
+    }
+  }
+  @media screen and (min-width: 901px) {
+    .form-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .input-container {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+  
+    .textbox-container {
+      margin: 0;
+    }
+  
+    label {
+      margin-right: 0;
+    }
+  }
+  
