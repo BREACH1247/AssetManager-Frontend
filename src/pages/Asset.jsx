@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const baseURL = "http://localhost:3000" + "/assetCreation";
 
@@ -47,6 +48,7 @@ const Asset = () => {
 
   return (
     <div className="max-w-md mx-auto mt-8 p-6 border rounded-lg shadow-md">
+      <Link to="/"><div>HOME</div></Link>
       <h2 className="text-2xl font-semibold mb-6">Asset Form</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">

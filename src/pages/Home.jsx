@@ -1,9 +1,11 @@
 import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const baseURL = "http://localhost:3000" + "/getAsset";
 const Home = () => {
+  
   const [name, setName] = useState("");
   const [selectedBuilding, setSelectedBuilding] = useState("");
   const [assetlist, setassetlist] = useState([]);
@@ -33,12 +35,12 @@ const Home = () => {
       .post(baseURL, body)
       .then((response) => {
         console.log(response.data);
-        setassetlist(response.data)
+        setassetlist(response.data);
       })
       .catch(function (error) {
         console.log(error);
       });
-      console.log(res)
+    console.log(res);
     // Reset form fields
     setName("");
 
@@ -54,7 +56,9 @@ const Home = () => {
 
   return (
     <div className="">
-      <div>HOME</div>
+      <Link to="/">
+        <div>HOME</div>
+      </Link>
       <div>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -97,7 +101,13 @@ const Home = () => {
       <div>
         <ul>
           {assetlist.map((asset) => (
-            <li key={asset._id}>{asset.name}</li>
+            <li key={asset._id}>
+              <Link
+                to="/asset"
+                state={{ asset }}>
+                <div>{asset.name}</div>
+              </Link>
+            </li>
           ))}
         </ul>
       </div>
